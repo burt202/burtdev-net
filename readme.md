@@ -2,6 +2,8 @@
 
 The code behind my portfolio site [http://burtdev.net](http://www.burtdev.net)
 
-### Git Hook
+### Initial Setup
 
-`cp hooks/pre-push .git/hooks/pre-push`
+- `npm i`
+- `bower install`
+- `npm run add-hook`
