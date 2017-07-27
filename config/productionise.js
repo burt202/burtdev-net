@@ -31,6 +31,14 @@ const prodPlugins = [
 ]
 
 const prodRules = [{
+  test: /\.css$/,
+  loader: ExtractTextPlugin.extract({
+    fallback: "style-loader",
+    use: [{
+      loader: "css-loader",
+    }],
+  }),
+}, {
   test: /\.less$/,
   loader: ExtractTextPlugin.extract({
     fallback: "style-loader",
@@ -38,14 +46,6 @@ const prodRules = [{
       loader: "css-loader",
     }, {
       loader: "less-loader",
-    }],
-  }),
-}, {
-  test: /\.css$/,
-  loader: ExtractTextPlugin.extract({
-    fallback: "style-loader",
-    use: [{
-      loader: "css-loader",
     }],
   }),
 }]
@@ -56,7 +56,7 @@ module.exports = function(webpackConfig) {
     R.slice(0, webpackConfig.plugins.length - 2, webpackConfig.plugins)
   )
 
-  const oldRules = webpackConfig.module.rules.slice(0, webpackConfig.module.rules.length - 1)
+  const oldRules = webpackConfig.module.rules.slice(0, webpackConfig.module.rules.length - 2)
   const entry = webpackConfig.entry.slice(-1)
   const result = R.merge(webpackConfig, {plugins, entry})
 

@@ -22,6 +22,10 @@ module.exports = {
   module: {
     rules: [
       {test: /\.jsx$/, use: [{loader: "jsx-loader"}]},
+      {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader"},
+      {test: /\.(woff|woff2)$/, loader: "url-loader?prefix=font/&limit=5000"},
+      {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=application/octet-stream"},
+      {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=image/svg+xml"},
       {test: /\.css$/, use: [
         {loader: "style-loader"},
         {loader: "css-loader"},
@@ -31,10 +35,6 @@ module.exports = {
         {loader: "css-loader"},
         {loader: "less-loader"},
       ]},
-      {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader"},
-      {test: /\.(woff|woff2)$/, loader: "url-loader?prefix=font/&limit=5000"},
-      {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=application/octet-stream"},
-      {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=image/svg+xml"},
     ],
   },
   devServer: {
