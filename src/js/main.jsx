@@ -7,11 +7,52 @@ const Route = Router.Route
 require("../css/imports.less")
 require("../../node_modules/ionicons/dist/css/ionicons.css")
 
-const Home = require("./home")
+const About = require("./about")
 const Projects = require("./projects")
+const NavigationItem = require("./navigation-item")
+
+const navigationItems = [
+  {href: "#", text: "About"},
+  {href: "#projects", text: "Projects"},
+]
 
 const Main = React.createClass({
   displayName: "Main",
+
+  getInitialState() {
+    return {
+      activeNavItem: "About",
+    }
+  },
+
+  onClick(name) {
+    this.setState({
+      activeNavItem: name,
+    })
+  },
+
+  renderItem(item) {
+    const active = item.text === this.state.activeNavItem
+
+    return (
+      <NavigationItem
+        key={item.text}
+        href={item.href}
+        text={item.text}
+        active={active}
+        onClick={this.onClick}
+      />
+    )
+  },
+
+  renderAbout() {
+    return <About navigateTo={this.onClick} />
+  },
+
+  openExternalLink(e) {
+    e.preventDefault()
+    window.open(e.target.href, "_blank")
+  },
 
   render() {
     return (
@@ -20,10 +61,9 @@ const Main = React.createClass({
           <div className="inner">
             <h1>Aaron Burtnyk</h1>
             <div className="navigation">
-            <ul>
-              <li><a href="#" className="about">About</a></li>
-              <li><a href="#projects" className="projects">Recent Projects</a></li>
-            </ul>
+              <ul>
+                {navigationItems.map(this.renderItem)}
+              </ul>
             </div>
           </div>
         </div>
@@ -31,8 +71,8 @@ const Main = React.createClass({
         <div className="main">
           <div className="content">
             <Switch>
-              <Route exact path="/" component={Home}/>
-              <Route path="/projects" component={Projects}/>
+              <Route exact path="/" render={this.renderAbout} />
+              <Route path="/projects" component={Projects} />
             </Switch>
           </div>
         </div>
@@ -45,9 +85,9 @@ const Main = React.createClass({
 
           <div className="logos">
             <ul>
-              <li><a className="ion ion-logo-github external" href="https://github.com/burt202" title="Github"></a></li>
-              <li><a className="ion ion-logo-twitter external" href="https://twitter.com/burt202" title="Twitter"></a></li>
-              <li><a className="ion ion-logo-linkedin external" href="http://uk.linkedin.com/pub/aaron-burtnyk/36/b7/559" title="LinkedIn"></a></li>
+              <li><a className="ion ion-logo-github" onClick={this.openExternalLink} href="https://github.com/burt202" title="Github"></a></li>
+              <li><a className="ion ion-logo-twitter" onClick={this.openExternalLink} href="https://twitter.com/burt202" title="Twitter"></a></li>
+              <li><a className="ion ion-logo-linkedin" onClick={this.openExternalLink} href="http://uk.linkedin.com/pub/aaron-burtnyk/36/b7/559" title="LinkedIn"></a></li>
             </ul>
           </div>
 

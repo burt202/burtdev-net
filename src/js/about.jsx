@@ -1,14 +1,23 @@
 const React = require("react")
+const PropTypes = require("prop-types")
 
-const Home = React.createClass({
-  displayName: "Home",
+const About = React.createClass({
+  displayName: "About",
+
+  propTypes: {
+    navigateTo: PropTypes.func.isRequired,
+  },
+
+  onClick() {
+    this.props.navigateTo("Projects")
+  },
 
   render() {
     return (
       <div>
         <div className="section">
           <h2>Web Developer based in Bristol, UK</h2>
-          <p>Welcome to my little space on the internet. Here you'll find out a little bit about my experience and info on some of my <a href="#projects" className="site-link">recent projects</a>. Feel free to get in touch.</p>
+          <p>Welcome to my little space on the internet. Here you'll find out a little bit about my experience and info on some of my <a href="#projects" className="site-link" onClick={this.onClick}>recent projects</a>. Feel free to get in touch.</p>
         </div>
 
         <div className="section">
@@ -22,4 +31,4 @@ const Home = React.createClass({
   },
 })
 
-module.exports = Home
+module.exports = About
