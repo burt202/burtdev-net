@@ -1,6 +1,2 @@
-.publish
-dist
-node_modules
-public/bower_components
-public/build/combined*
-public/templates/projects/content.build.html
+build/
+node_modules/

@@ -1,0 +1,33 @@
+<div class="portfolio-item"><h2 id="jsonquery-co-uk">JsonQuery.co.uk</h2>
+<p>Born out of a need to query large arrays of JSON data, I created jsonquery.co.uk because I couldn&#39;t find any existing tools up to the job. Yes you could use something like <a href="https://github.com/raine/ramda-cli">ramda-cli</a> or write a simple nodeJS script each time, but that isn&#39;t convenient and takes time and effort.</p>
+<p>With this tool, you give it a schema describing the properties and their types, and the raw data, before an interactive interface is displayed allowing you to really drill down into your data with multiple filters and grouping. It comes with an simple example and the aim is for it to become a popular dev tool over time.</p>
+<p>Underneath it is a static-site generated and deployed using <a href="http://gulpjs.com/">gulp</a> tasks hosted on <a href="https://pages.github.com/">github pages</a> which is quickly becoming my method of choice for smaller projects.</p>
+<ul>
+<li><a href="http://jsonquery.co.uk/">Website</a></li>
+</ul>
+</div>
+<div class="portfolio-item"><h2 id="lite-uploader">Lite Uploader</h2>
+<p>This is a small nodeJS library and jQuery plugin which utilises the newer HTML5 and Javascript features <a href="http://www.html5rocks.com/en/tutorials/file/dndfiles">File API</a>, <a href="http://www.html5rocks.com/en/tutorials/file/xhr2">XHR2</a> and <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promises</a> to make uploading files a doddle. Features include basic validation, hooks for all major events like progress, success, fail etc, and drag/drop support and is a good choice for any developer who is not so worried about supporting legacy browsers.</p>
+<p>Created in 2013, it has gone through many versions and revisions and since open-sourcing it on Github and making it available on bower and npm, it has a gained a small user-base who contribute back to the project by raising issues and creating pull requests. It has a full suite of unit tests, providing a high code coverage keeping regressions to a mimimum.</p>
+<ul>
+<li><a href="https://github.com/burt202/lite-uploader">Github Repo</a></li>
+<li><a href="https://www.npmjs.com/package/lite-uploader">Npm</a></li>
+<li><a href="http://bower.io/search/?q=lite-uploader">Bower Search</a></li>
+</ul>
+</div>
+<div class="portfolio-item"><h2 id="html5-mp3-player">HTML5 MP3 Player</h2>
+<p>Making use of the <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/audio">HTML5 audio element</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events">media events</a>, here is an example of how you can use the newer web technologies to create an MP3 player with many features you&#39;re likely to see on a desktop media player. Using the <a href="https://www.npmjs.com/package/mp3-parser">mp3 parser npm module</a> to extract the data from the MP3s, the interface around them is simple and intuitive.</p>
+<p>With a <a href="https://nodejs.org/en/">NodeJS</a> back-end, and <a href="http://backbonejs.org/">BackboneJS</a>/<a href="http://marionettejs.com/">MarionetteJS</a>/<a href="http://requirejs.org/">RequireJS</a> on the front end, I&#39;ve been able to build a player with custom controls, filtering and sorting. It is heavily tested using <a href="http://jasmine.github.io">Jasmine</a> and overall this was a fun little project to undertake.</p>
+<ul>
+<li><a href="https://github.com/burt202/mp3-player">GitHub Repo</a></li>
+</ul>
+</div>
+<div class="portfolio-item"><h2 id="table-tennis-scoring">Table Tennis Scoring</h2>
+<p>Created simply to facilitate a table tennis league we were having in our office. We wanted something that could be updated quickly and publicly viewable so all participants could keep an eye on all of the results coming in. Again, using a mixture of gulp tasks and github pages for hosting, this was made very easy.</p>
+<p>Adding leagues, players and results needed to be easy as well, especially in regard to the results, as they would be coming in thick and fast. Bash scripts were chosen in the end, so all admin could be done very efficiently from the command line.</p>
+<p>The code is on github, but because of the nature of how github pages works, the repo needs to be forked before cloning to benefit from your own hosted league table.</p>
+<ul>
+<li><a href="https://github.com/burt202/table-tennis-scoring">Github Repo</a></li>
+<li><a href="https://www.npmjs.com/package/table-tennis-scoring">Npm</a></li>
+</ul>
+</div>
