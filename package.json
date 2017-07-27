@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "add-hook": "cp hooks/pre-push .git/hooks/pre-push; chmod +x .git/hooks/pre-push"
+    "prepush": "gulp deploy-static"
   },
   "devDependencies": {
     "bower": "1.3.12",
@@ -20,6 +20,7 @@
     "gulp-rename": "1.2.0",
     "gulp-shell": "0.2.9",
     "gulp-util": "3.0.1",
+    "husky": "^0.14.3",
     "jshint-stylish": "0.4.0",
     "requirejs": "2.1.18",
     "run-sequence": "1.1.1"
