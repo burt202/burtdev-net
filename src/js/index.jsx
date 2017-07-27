@@ -2,9 +2,14 @@ const React = require("react")
 const ReactDOM = require("react-dom")
 const Main = require("./main")
 
-ReactDOM.render(
-  <Main />,
-  document.body.querySelector(".container")
+const Router = require("react-router-dom")
+const HashRouter = Router.HashRouter
+
+ReactDOM.render((
+    <HashRouter>
+      <Main />
+    </HashRouter>
+  ), document.body.querySelector(".container")
 )
 
 // Hot Module Replacement API
@@ -15,7 +20,9 @@ if (module.hot) {
 
     ReactDOM.render(
       <AppContainer>
-        <Main />
+        <HashRouter>
+          <Main />
+        </HashRouter>
       </AppContainer>,
       document.body.querySelector(".container")
     )

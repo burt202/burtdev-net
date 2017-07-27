@@ -1,7 +1,14 @@
 const React = require("react")
+const Router = require("react-router-dom")
+
+const Switch = Router.Switch
+const Route = Router.Route
 
 require("../css/imports.less")
 require("../../node_modules/ionicons/dist/css/ionicons.css")
+
+const Home = require("./home")
+const Projects = require("./projects")
 
 const Main = React.createClass({
   displayName: "Main",
@@ -12,12 +19,22 @@ const Main = React.createClass({
         <div className="banner">
           <div className="inner">
             <h1>Aaron Burtnyk</h1>
-            <div className="navigation"></div>
+            <div className="navigation">
+            <ul>
+              <li><a href="#" className="about">About</a></li>
+              <li><a href="#projects" className="projects">Recent Projects</a></li>
+            </ul>
+            </div>
           </div>
         </div>
 
         <div className="main">
-          <div className="content">Under development</div>
+          <div className="content">
+            <Switch>
+              <Route exact path="/" component={Home}/>
+              <Route path="/projects" component={Projects}/>
+            </Switch>
+          </div>
         </div>
 
         <div className="footer">

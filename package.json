@@ -3,17 +3,18 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "lint": "eslint src/",
+    "lint": "eslint src/ test/ --ext .js,.jsx",
     "start": "webpack-dev-server --progress --colors",
     "build": "rm -rf build; webpack --config ./config/webpack.config.prod.js --progress",
     "deploy": "gh-pages -d build",
-    "precommit": "npm run lint && npm run test",
+    "precommit": "npm run lint",
     "prepush": "npm run build; npm run deploy"
   },
   "dependencies": {
     "ionicons": "^3.0.0",
     "react": "^15.0.1",
-    "react-dom": "^15.0.1"
+    "react-dom": "^15.0.1",
+    "react-router-dom": "^4.1.2"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.0.1",
