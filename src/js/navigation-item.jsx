@@ -13,7 +13,7 @@ const NavigationItem = React.createClass({
   },
 
   onClick() {
-    this.props.onClick(this.props.text)
+    this.props.onClick(this.props.href)
   },
 
   render() {

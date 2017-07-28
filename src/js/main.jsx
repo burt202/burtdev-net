@@ -11,17 +11,12 @@ const About = require("./about")
 const Projects = require("./projects")
 const NavigationItem = require("./navigation-item")
 
-const navigationItems = [
-  {href: "#", text: "About"},
-  {href: "#projects", text: "Projects"},
-]
-
 const Main = React.createClass({
   displayName: "Main",
 
   getInitialState() {
     return {
-      activeNavItem: "About",
+      activeNavItem: location.hash,
     }
   },
 
@@ -32,7 +27,7 @@ const Main = React.createClass({
   },
 
   renderItem(item) {
-    const active = item.text === this.state.activeNavItem
+    const active = item.href === this.state.activeNavItem
 
     return (
       <NavigationItem
@@ -59,6 +54,11 @@ const Main = React.createClass({
   },
 
   render() {
+    const navigationItems = [
+      {href: "#/", text: "About"},
+      {href: "#/projects", text: "Projects"},
+    ]
+
     return (
       <div>
         <div className="banner">

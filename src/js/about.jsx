@@ -9,7 +9,7 @@ const About = React.createClass({
   },
 
   onClick() {
-    this.props.navigateTo("Projects")
+    this.props.navigateTo("#/projects")
   },
 
   render() {
