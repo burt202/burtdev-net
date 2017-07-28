@@ -14,7 +14,7 @@ const About = React.createClass({
 
   render() {
     return (
-      <div>
+      <div className="about">
         <div className="section">
           <h2>Web Developer based in Bristol, UK</h2>
           <p>Welcome to my little space on the internet. Here you'll find out a little bit about my experience and info on some of my <a href="#projects" className="site-link" onClick={this.onClick}>recent projects</a>. Feel free to get in touch.</p>
