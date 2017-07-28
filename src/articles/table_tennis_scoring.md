@@ -1,8 +1,8 @@
 ## Table Tennis Scoring
 
-Created simply to facilitate a table tennis league we were having in our office. We wanted something that could be updated quickly and publicly viewable so all participants could keep an eye on all of the results coming in. Again, using a mixture of gulp tasks and github pages for hosting, this was made very easy.
+Created simply to facilitate a table tennis league we were having in our office. We wanted something that could be updated quickly and publicly viewable so all participants could keep an eye on all of the results coming in. Again, I decided a static site hosted on github pages seemed like the best form for it and the quickest to throw together.
 
-Adding leagues, players and results needed to be easy as well, especially in regard to the results, as they would be coming in thick and fast. Bash scripts were chosen in the end, so all admin could be done very efficiently from the command line.
+Bash scripts were chosen to streamline the adding of all of the data, which is all stored in text files, before being used to dynamically regenerate the HTML needed for the results table. All changes are push-to-deploy, running a [Webpack](https://webpack.js.org/) build step to do all of the bundling.
 
 The code is on github, but because of the nature of how github pages works, the repo needs to be forked before cloning to benefit from your own hosted league table.
 
