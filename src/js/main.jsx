@@ -49,6 +49,10 @@ const Main = React.createClass({
     return <About navigateTo={this.onClick} />
   },
 
+  renderProjects() {
+    return <Projects openExternalLink={this.openExternalLink} />
+  },
+
   openExternalLink(e) {
     e.preventDefault()
     window.open(e.target.href, "_blank")
@@ -72,7 +76,7 @@ const Main = React.createClass({
           <div className="content">
             <Switch>
               <Route exact path="/" render={this.renderAbout} />
-              <Route path="/projects" component={Projects} />
+              <Route path="/projects" component={this.renderProjects} />
             </Switch>
           </div>
         </div>
