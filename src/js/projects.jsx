@@ -6,9 +6,10 @@ const ReactMarkdown = require("react-markdown")
 const jsonQuery = require("../articles/json_query.md")
 const liteUploader = require("../articles/lite_uploader.md")
 const mp3Player = require("../articles/mp3_player.md")
+const staticSiteGenerator = require("../articles/static_site_generator.md")
 const tableTennis = require("../articles/table_tennis_scoring.md")
 
-const articles = [jsonQuery, liteUploader, mp3Player, tableTennis]
+const articles = [jsonQuery, staticSiteGenerator, liteUploader, tableTennis, mp3Player]
 
 const Projects = React.createClass({
   displayName: "Projects",
